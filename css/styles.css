@@ -588,11 +588,7 @@ hr.hr-heading {
 	max-width: max-content;
 }
 
-.navbar .container {
-	justify-content: space-between !important;
-}
-
-.navbar .container .navbar-brand,
+.navbar-container .navbar-brand,
 .nav-link {
 	color: #ffffff !important;
 }
@@ -1450,7 +1446,16 @@ hr.hr-heading {
         display: block
     }
 	.nav-container {
-		min-width: 700px;
+		min-width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.nav-container .navbar-brand {
+		padding-left: 50px;
+	}
+	.nav-container .navbar-toggler {
+		margin-right: 20px;
 	}
 
 	/* General Styles */
@@ -1613,10 +1618,18 @@ hr.hr-heading {
 	/**********************/
 	/*     Navigation     */
 	/**********************/
-
-	.navbar .navbar-brand {
+	.nav-container {
+		min-width: min-content;
+		display: flex;
+		justify-content:center;
+		align-items: center;
+	}
+	.nav-container .navbar-brand {
 		padding-top: 0.25rem;
 		padding-bottom: 0.25rem;
+	}
+	.nav-container .navbar-toggler {
+		margin-right: 20px;
 	}
 
 	.navbar .logo-image img {
@@ -2077,7 +2090,7 @@ hr.hr-heading {
 	}
 
 	/* General Styles */
-	.container {
+	.nav-container {
 		max-width: 1140px;
 	}
 
@@ -2089,7 +2102,7 @@ hr.hr-heading {
 
 
 	/* Navigation */
-	.navbar .container {
+	.navbar-container {
 		max-width: 100%;
 		padding-right: 2.5rem;
 		padding-left: 2.5rem;
