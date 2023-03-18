@@ -122,6 +122,9 @@ h6 {
 .li-space-lg li {
 	margin-bottom: 0.5rem;
 }
+.li-space-sm li {
+	margin-bottom: 0.3rem;
+}
 
 a {
 	color: #6b747b;
@@ -478,7 +481,14 @@ hr.hr-heading {
 	color: #0055eb !important;
 	opacity: 1;
 }
-
+.linkSub {
+    font-size: 12px;
+    line-height: 22px;
+    color: #6b7c93;
+    margin: 5px 0 0;
+    display: block;
+	text-align: start;
+}
 /* Dropdown Menu */
 .navbar .dropdown-menu {
 	margin-top: 0.25rem;
@@ -1453,7 +1463,7 @@ hr.hr-heading {
 		pointer-events: none;
 	}
 	.navbar .dropdown .dropdown-menu {
-		transition: opacity 0.9s ease, visibility 0.5s ease!important;
+		transition: opacity 0.3s ease, visibility 0.5s ease!important;
 		/* required for the fade animation */
 	}
 	.h1-large {
@@ -1575,8 +1585,8 @@ hr.hr-heading {
 		margin-bottom: 0.25rem;
 		border: none;
 		background-color: white;
-		min-width: max-content;
-		max-width: fit-content;
+		min-width: min-content;
+		max-width: 300px;
 		/* Move dropdown content onto the screen from the right */
 		z-index: 9999;
 	}
@@ -1596,17 +1606,16 @@ hr.hr-heading {
 		overflow-y: auto;
 		visibility: hidden;
 		margin-top: 60px;
-		transition: visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
-		transition: transform .3s ease-in-out, visibility .3s ease-in-out;
-		transition: transform .3s ease-in-out, visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
+		transition: width 0.2s ease-in-out;
 	}
 
 	.offcanvas-collapse.open {
 		visibility: visible;
 		-webkit-transform: translateX(-100%);
 		transform: translateX(-100%);
-		min-width:400px;
 		border-radius: 20px;
+		min-width:300px;
+		max-width: fit-content;
 	}
 
 	/* Header */
@@ -1777,7 +1786,15 @@ hr.hr-heading {
 		-webkit-transform: none;
 		transform: none;
 	}
-
+	.offcanvas-collapse.open .dropdown .dropdown-menu {
+		margin-top: 0.25rem;
+		margin-bottom: 0.25rem;
+		border: none;
+		background-color: white;
+		min-width: max-content;
+		/* Move dropdown content onto the screen from the right */
+		z-index: 9999;
+	}
 	.offcanvas-collapse {
 		position: static;
 		top: auto;
