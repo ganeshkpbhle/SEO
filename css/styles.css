@@ -1576,6 +1576,7 @@ hr.hr-heading {
 		border: none;
 		background-color: white;
 		min-width: max-content;
+		max-width: fit-content;
 		/* Move dropdown content onto the screen from the right */
 		z-index: 9999;
 	}
@@ -1605,8 +1606,7 @@ hr.hr-heading {
 		-webkit-transform: translateX(-100%);
 		transform: translateX(-100%);
 		min-width:400px;
-		border-bottom-left-radius: 20px;
-		border-top-left-radius: 20px;
+		border-radius: 20px;
 	}
 
 	/* Header */

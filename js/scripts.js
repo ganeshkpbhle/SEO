@@ -168,10 +168,12 @@ function topFunction() {
 
 // Get the dropdown button and content elements
 var dropdownBtn = document.getElementById("dropdown-btn");
+var dropDown = document.querySelector(".dropdown");
 var dropdownContent = document.querySelector(".dropdown-menu");
 
 // When the button is clicked
 dropdownBtn.addEventListener("click", function () {
+	dropdownContent.style.transitionDelay="0.7s";
 	if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
 		dropdownContent.style.display = "block";
 		// Change the button icon to an angle up
@@ -184,6 +186,13 @@ dropdownBtn.addEventListener("click", function () {
 	// Toggle the "active" class on the button
 	this.classList.toggle("active");
 });
+dropDown.addEventListener('mouseenter', (event) => {
+	// check if the screen size is less than 992px
+	if (window.innerWidth < 992 && !dropdownBtn.classList.contains("active")) {
+		// prevent the default behavior of showing the drop-down content
+		dropdownContent.style.display="none";
+	}
+});
 window.addEventListener("resize", function () {
 	if (window.innerWidth >= 992) {
 		// Change the button icon to an angle down
@@ -191,8 +200,8 @@ window.addEventListener("resize", function () {
 		// Remove the "active" class from the button
 		dropdownBtn.classList.remove("active");
 	}
-	if(window.innerWidth >= 992 && (dropdownContent.style.display==="none"||dropdownContent.style.display==="block")){
-		dropdownContent.style.display="";
+	if (window.innerWidth >= 992 && (dropdownContent.style.display === "none" || dropdownContent.style.display === "block")) {
+		dropdownContent.style.display = "";
 		// Change the button icon to an angle down
 		dropdownBtn.innerHTML = '<i class="fas fa-angle-down"></i>';
 		// Remove the "active" class from the button
